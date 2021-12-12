@@ -27,7 +27,7 @@ function addGalaxz() {
      createdBy: createdby.value,
      createdById:firebase.auth().currentUser.uid,
      galaxzId: autoId,
-     priority:1001, //value more than 1000 means inactive . set this value when activating galaxz
+     priority:1001, //(parseInt(spriority.value)), value more than 1000 means inactive . set this value when activating galaxz
      status:status.value,
      tags:tags.value,
      numberOfSolasys:  0,
@@ -71,7 +71,7 @@ function getCurators(){
     })
 }
         
-// get the list if galaxz names
+// get the list if galaxz names for solasys form
 function getGalaxz(){
     const gdatabase = firebase.database();
     
@@ -129,6 +129,7 @@ function getCurators1(){
     const sstatus = document.getElementById('sstatus');
     const stags = document.getElementById('stags');
     const galaxzId = document.getElementById('getgalaxz');
+   //const galaxzName = document.getElementById('getgalaxz');
 
  const database1 = firebase.database();
  const usersRef1 = database1.ref('/solasys');
@@ -141,7 +142,7 @@ function getCurators1(){
      createdById:firebase.auth().currentUser.uid,
      galaxzId: galaxzId.value,
      solasysId: autoId,
-     priority:spriority.value, 
+     priority: (parseInt(spriority.value)),  // priority should be number
      status:sstatus.value,
      tags:stags.value,
      numberOfArticles:  0,
@@ -152,7 +153,18 @@ function getCurators1(){
      galaxzId_status:galaxzId.value+"_"+sstatus.value
      
  })
+
+ //add +1 to number of solasys in galaxz table only if status is selected as active 
+
+ if (sstatus.value == "Active"){
+ const database = firebase.database();
  
- document.getElementById('ssuccess').innerHTML = 'Solasys added! under Galaxz' +sname;
+ database.ref('/galaxz/' +galaxzId.value).update({ 
+    numberOfSolasys:firebase.database.ServerValue.increment(1)
+  });
+}
+
+ document.getElementById('ssuccess').innerHTML = 'Solasys added! under Galaxz   '   +galaxzId.value;
+
 
  }
