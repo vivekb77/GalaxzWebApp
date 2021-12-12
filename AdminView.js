@@ -37,7 +37,7 @@ function addGalaxz() {
 
  })
  
- document.getElementById('success').innerHTML = 'Galaxz added! Make it actice after adding Solasys and Xanets';
+ document.getElementById('success').innerHTML = 'Galaxz added. Add Solasys and Xanets now, admin will make the Galaxz live after verifying the data.';
 
  }
 
@@ -135,7 +135,6 @@ function getCurators1(){
     const sname = document.getElementById('sname');
     const sdescription = document.getElementById('sdescription');
     const screatedby = document.getElementById('screatedby');
-    const spriority = document.getElementById('spriority');
     const sstatus = document.getElementById('sstatus');
     const stags = document.getElementById('stags');
     const galaxzId = document.getElementById('getgalaxz');
@@ -152,7 +151,7 @@ function getCurators1(){
      createdById:firebase.auth().currentUser.uid,
      galaxzId: galaxzId.value,
      solasysId: autoId,
-     priority: (parseInt(spriority.value)),  // priority should be number
+     priority: 99,//(parseInt(spriority.value)),  // priority should be number
      status:sstatus.value,
      tags:stags.value,
      numberOfArticles:  0,
@@ -174,7 +173,7 @@ function getCurators1(){
   });
 }
 
- document.getElementById('ssuccess').innerHTML = 'Solasys added! under Galaxz   '   +galaxzId.value;
+ document.getElementById('ssuccess').innerHTML = 'Solasys added under Galaxz. Add Xanets now.';
 
 
  }
@@ -186,7 +185,9 @@ function getGalaxz2(){
 
     const gdatabase = firebase.database();
     
-    gdatabase.ref('/galaxz').once("value",function(snapshot){
+    gdatabase.ref('/galaxz').orderByChild("createdById")
+    .equalTo(firebase.auth().currentUser.uid)   // get galaxz which are created by logged in user
+    .once("value",function(snapshot){
     snapshot.forEach(function(childSnapshot){
         
         let galaxzName = childSnapshot.val().name;
@@ -272,7 +273,6 @@ function addXanet() {
     const xdescription = document.getElementById('xdescription');
     const xurl = document.getElementById('xurl');
     const xcreatedby = document.getElementById('xcreatedby');
-    const xpriority = document.getElementById('xpriority');
     const xstatus = document.getElementById('xstatus');
     const xtags = document.getElementById('xtags');
     const xgalaxzId = document.getElementById('getgalaxz2');
@@ -291,7 +291,7 @@ function addXanet() {
      createdById:firebase.auth().currentUser.uid,
      galaxzId: xgalaxzId.value,
      solasysId: xsolasysId.value,
-     priority: (parseInt(xpriority.value)),  // priority should be number
+     priority: 99, //(parseInt(xpriority.value)),  // priority should be number
      status:xstatus.value,
      tags:xtags.value,
      views: 0,
@@ -313,6 +313,6 @@ function addXanet() {
   });
  }
 
- document.getElementById('xsuccess').innerHTML = 'Xanet added! under Solasys   '   +xsolasysId.value;
+ document.getElementById('xsuccess').innerHTML = 'Xanet (Article) added.';
 
 }

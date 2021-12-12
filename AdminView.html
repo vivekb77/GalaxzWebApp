@@ -20,10 +20,16 @@
     ></script>
 </head>
 <body>
-    <center><div style="margin:100px">
+    <center><div style="margin:10px">
         <span id="user" class="message">Hello, < email-id ></Email-id></span>
         <div class="success"><span>Add / Update / Delete content</span></div>
     </div></center>
+     <!-- Update -->
+     <center><div style="margin:10px">
+        <button class="btn btn-danger" onclick="UpdateView.html">GoTo UPDATE SECTION</button>
+    </div></center>
+    
+    <br>
       <div class="card">
         <div class="card-header">
             <center><h3>Add GALAXZ</h3></center>
@@ -61,7 +67,7 @@
                 <br>
                 <input id="tags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, 1 or more tags, comma seperated" required/>
             </label><br />
-        </center>
+        </center><br>
         <label id="success" name="success" class="input"></label>
             <center><button type="submit" value="submit" onclick="addGalaxz();" class="btn btn-primary">Add Galaxz</button>
             </center>
@@ -107,11 +113,6 @@
                 <button class="btn btn-danger" onclick="getCurators1()">Get Curators List</button>
 
             <center><label class="custom-field">
-                <label><b>Priority</b></label>
-                <br>
-                <input id="spriority" type="text" pattern="[0-9]+" class="input" minlength="1" maxlength="3" placeholder="only numbers, 0 to 999" required/>
-            </label><br />
-            <center><label class="custom-field">
                 <label><b>Status</b></label>
                 <br>
                 <select id="sstatus" name="status">
@@ -124,8 +125,9 @@
             <br>
                 <input id="stags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, 1 or more tags, comma seperated" required/>
             </label><br />
-        </center><br /><br/>
+        </center><br />
         <label id="ssuccess" name="ssuccess" class="input"></label>
+        <br>
             <center><button type="submit" value="submit" onclick="addSolasys();" class="btn btn-primary">Add Solasys</button>
             </center>
         </form>
@@ -133,22 +135,24 @@
 
      <!-- add Xanets -->
      <br>
-     <br> <br>
-     <br>
+     <br> 
+    
      <div class="card">
          <div class="card-header">
-             <center><h3>Add Xanets</h3></center>
+             <center><h3>Add Xanets (Articels)</h3></center>
          </div>
          <form name = "xanetsform">
  
              <center><label class="custom-field">
-                 <label>Get Galaxz:</label>
+                 <label><b>Search your Galaxzies</b> </label>
+                 <br>
                  <select id="getgalaxz2" name="getgalaxz2" required>
                    </select>
              </label><br />
             <button class="btn btn-danger" onclick="getGalaxz2()">Get Galaxz List</button>
             <center><label class="custom-field">
-                <label>Get Solasys:</label>
+                <label><b>Search Solasys under selected Galaxz</b></label>
+                <br>
                 <select id="getsolasys" name="getsolasys" required>
                   </select>
             </label><br />
@@ -156,20 +160,24 @@
               <center><label class="custom-field">
              <center><small><span id="error" style="color: red"></span></small></center>
              <center><label class="custom-field">
-                 <label>Xanet Title:</label>
+                 <label><b>Xanet (Article) Title</b></label>
+                 <br>
                  <textarea name="xname" id="xname" rows="4" cols="30" placeholder="70 chars" minlength="5" maxlength="70" required></textarea>
                   </textarea>
              </label><br />
              <center><label class="custom-field">
-                 <label>Xanet description:</label>
+                 <label><b>Xanet (Article) description</b></label>
+                 <br>
                  <textarea name="xdescription" id="xdescription" rows="5" cols="30" placeholder="130 chars" minlength="5" maxlength="130" required></textarea>
              </label><br />
              <center><label class="custom-field">
-                <label>URL:</label>
-                <textarea name="xurl" id="xurl" rows="2" cols="30" placeholder="50 chars" minlength="5" maxlength="50" required></textarea>
+                <label><b>URL of the article</b><br>Should be https:// not http://</label>
+                <br>
+                <input id="xurl" type="text" class="input" minlength="6" maxlength="200" placeholder="200 chars, url should start with https://" required/>
             </label><br />
              <center><label class="custom-field">
-                 <label>Curated By:</label>
+                 <label><b>Curated By</label></b></label>
+                 <br>
                  <select id="xcreatedby" name="xcreatedby" required>
                    </select>
              </label><br />
@@ -177,19 +185,17 @@
                  <button class="btn btn-danger" onclick="getCurators2()">Get Curators List</button>
  
              <center><label class="custom-field">
-                 <label> Priority:</label>
-                 <input id="xpriority" type="text" pattern="[0-9]+" class="input" minlength="1" maxlength="3" placeholder="only numbers, 0 to 999" required/>
-             </label><br />
-             <center><label class="custom-field">
-                 <label>Status</label>
+                 <label><b>Status</b></label>
+                 <br>
                  <select id="xstatus" name="xstatus">
                      <option value="Active">Active</option>
                      <option value="InActive">InActive</option>
                    </select>
              </label><br />
              <center><label class="custom-field">
-                 <label>Tags:</label>
-                 <input id="xtags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, comma seperated tags" required/>
+                 <label><b>Tags</b></label>
+                 <br>
+                 <input id="xtags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, 1 or more tags, comma seperated" required/>
              </label><br />
          </center><br /><br/>
          <label id="xsuccess" name="xsuccess" class="input"></label>
@@ -197,9 +203,7 @@
              </center>
          </form>
      </div>
-
-     <!-- Logout -->
-    <center><div style="margin:220px">
+    <center><div style="margin:100px">
         <button class="btn btn-danger" onclick="logout()">Logout</button>
     </div></center>
 
