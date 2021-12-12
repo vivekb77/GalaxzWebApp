@@ -24,9 +24,11 @@
         <span id="user" class="message">Hello, < email-id ></Email-id></span>
         <div class="success"><span>Add / Update / Delete content</span></div>
     </div></center>
-     <!-- Update -->
+     <!-- Update page-->
      <center><div style="margin:10px">
-        <button class="btn btn-danger" onclick="UpdateView.html">GoTo UPDATE SECTION</button>
+        <form method="get" action="UpdateView.html">
+            <button class="btn btn-primary" type="submit">GoTo UPDATE SECTION</button>
+        </form>
     </div></center>
     
     <br>
@@ -204,7 +206,7 @@
          </form>
      </div>
     <center><div style="margin:100px">
-        <button class="btn btn-danger" onclick="logout()">Logout</button>
+        <button class="btn btn-primary" onclick="logout()">Logout</button>
     </div></center>
 
 
@@ -239,14 +241,8 @@
          }
 
          if( document.galaxzform.createdby.value == "" ) {
-            alert( "Select created by" );
+            alert( "Select a curator from the list" );
             document.galaxzform.createdby.focus() ;
-            return false;
-         }
-
-         if( document.galaxzform.priority.value == "" ) {
-            alert( "Add Galaxz priority" );
-            document.galaxzform.priority.focus() ;
             return false;
          }
 
