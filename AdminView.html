@@ -22,26 +22,27 @@
 <body>
     <center><div style="margin:100px">
         <span id="user" class="message">Hello, < email-id ></Email-id></span>
-        <div class="success"><span>Add / Update / Delete content</span></div><br/>
+        <div class="success"><span>Add / Update / Delete content</span></div>
     </div></center>
-    
-    <div class="card">
+      <div class="card">
         <div class="card-header">
-            <center><h3>Add Galaxz</h3></center>
+            <center><h3>Add GALAXZ</h3></center>
         </div>
-        <form name = "galaxzform">
-            <center><small><span id="error" style="color: red"></span></small></center>
+        <form name = "galaxzform" id="AddGalaxzForm" class="card-body px-5 py-4">
             <center><label class="custom-field">
-                <label>Galaxz name:</label>
+                 <span class="input"><b>Galaxz Name</b></span>
+              <br>
                 <textarea name="gname" id="gname" rows="4" cols="30" placeholder="70 chars" minlength="5" maxlength="70" required></textarea>
                  </textarea>
             </label><br />
             <center><label class="custom-field">
-                <label>Galaxz description:</label>
+ <span class="input"><b>Galaxz description</b></span>
+                <br>
                 <textarea name="description" id="description" rows="5" cols="30" placeholder="130 chars" minlength="5" maxlength="130" required></textarea>
             </label><br />
             <center><label class="custom-field">
-                <label>Created By:</label>
+                <label class="input"><b>Curated By </b><br>This is displayed on the APP<br> Ask admin to add yours.</label>
+               <br>
                 <select id="createdby" name="createdby" required>
                   </select>
             </label><br />
@@ -49,20 +50,18 @@
                 <button class="btn btn-danger" onclick="getCurators()">Get Curators List</button>
 
             <center><label class="custom-field">
-                <label> Priority:</label>
-                <input id="priority" type="text" pattern="[0-9]+" class="input" minlength="1" maxlength="3" placeholder="only numbers, 0 to 999" required/>
-            </label><br />
-            <center><label class="custom-field">
-                <label>Status, keep inactive now, change later<br>when all data is added:</label>
+                <label><b>Status </b><br> Keeping inactive now, admin will make Galaxz active<br>when data is verified</label>
+                <br>
                 <select id="status" name="status">
                     <option value="InActive">InActive</option>
                   </select>
             </label><br />
             <center><label class="custom-field">
-                <label>Tags:</label>
-                <input id="tags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, comma seperated tags" required/>
+                <label><b>Tags</b></label>
+                <br>
+                <input id="tags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, 1 or more tags, comma seperated" required/>
             </label><br />
-        </center><br /><br/>
+        </center>
         <label id="success" name="success" class="input"></label>
             <center><button type="submit" value="submit" onclick="addGalaxz();" class="btn btn-primary">Add Galaxz</button>
             </center>
@@ -71,16 +70,16 @@
 
     <!-- add solasys -->
     <br>
-    <br> <br>
-    <br>
+    <br> 
     <div class="card">
         <div class="card-header">
-            <center><h3>Add Solasys</h3></center>
+            <center><h3>Add SOLASYS</h3></center>
         </div>
         <form name = "solasysform">
 
             <center><label class="custom-field">
-                <label>Get Galaxz:</label>
+                <label><b>Search your Galaxzies to add Solasys</label></b></label>
+                <br>
                 <select id="getgalaxz" name="getgalaxz" required>
                   </select>
             </label><br />
@@ -88,16 +87,19 @@
              <center><label class="custom-field">
             <center><small><span id="error" style="color: red"></span></small></center>
             <center><label class="custom-field">
-                <label>Solasys name:</label>
+                <label><b>Solasys name</b></label>
+                <br>
                 <textarea name="sname" id="sname" rows="4" cols="30" placeholder="70 chars" minlength="5" maxlength="70" required></textarea>
                  </textarea>
             </label><br />
             <center><label class="custom-field">
-                <label>Solasys description:</label>
+                <label><b>Solasys description</b></label>
+                <br>
                 <textarea name="sdescription" id="sdescription" rows="5" cols="30" placeholder="130 chars" minlength="5" maxlength="130" required></textarea>
             </label><br />
             <center><label class="custom-field">
-                <label>Created By:</label>
+                <label><b>Curated By</b></label>
+            <br>
                 <select id="screatedby" name="screatedby" required>
                   </select>
             </label><br />
@@ -105,19 +107,22 @@
                 <button class="btn btn-danger" onclick="getCurators1()">Get Curators List</button>
 
             <center><label class="custom-field">
-                <label> Priority:</label>
+                <label><b>Priority</b></label>
+                <br>
                 <input id="spriority" type="text" pattern="[0-9]+" class="input" minlength="1" maxlength="3" placeholder="only numbers, 0 to 999" required/>
             </label><br />
             <center><label class="custom-field">
-                <label>Status</label>
+                <label><b>Status</b></label>
+                <br>
                 <select id="sstatus" name="status">
                     <option value="Active">Active</option>
                     <option value="InActive">InActive</option>
                   </select>
             </label><br />
             <center><label class="custom-field">
-                <label>Tags:</label>
-                <input id="stags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, comma seperated tags" required/>
+                <label><b>Tags</b></label>
+            <br>
+                <input id="stags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, 1 or more tags, comma seperated" required/>
             </label><br />
         </center><br /><br/>
         <label id="ssuccess" name="ssuccess" class="input"></label>
@@ -126,6 +131,74 @@
         </form>
     </div>
 
+     <!-- add Xanets -->
+     <br>
+     <br> <br>
+     <br>
+     <div class="card">
+         <div class="card-header">
+             <center><h3>Add Xanets</h3></center>
+         </div>
+         <form name = "xanetsform">
+ 
+             <center><label class="custom-field">
+                 <label>Get Galaxz:</label>
+                 <select id="getgalaxz2" name="getgalaxz2" required>
+                   </select>
+             </label><br />
+            <button class="btn btn-danger" onclick="getGalaxz2()">Get Galaxz List</button>
+            <center><label class="custom-field">
+                <label>Get Solasys:</label>
+                <select id="getsolasys" name="getsolasys" required>
+                  </select>
+            </label><br />
+           <button class="btn btn-danger" onclick="getSolasys()">Get Solasys List</button>
+              <center><label class="custom-field">
+             <center><small><span id="error" style="color: red"></span></small></center>
+             <center><label class="custom-field">
+                 <label>Xanet Title:</label>
+                 <textarea name="xname" id="xname" rows="4" cols="30" placeholder="70 chars" minlength="5" maxlength="70" required></textarea>
+                  </textarea>
+             </label><br />
+             <center><label class="custom-field">
+                 <label>Xanet description:</label>
+                 <textarea name="xdescription" id="xdescription" rows="5" cols="30" placeholder="130 chars" minlength="5" maxlength="130" required></textarea>
+             </label><br />
+             <center><label class="custom-field">
+                <label>URL:</label>
+                <textarea name="xurl" id="xurl" rows="2" cols="30" placeholder="50 chars" minlength="5" maxlength="50" required></textarea>
+            </label><br />
+             <center><label class="custom-field">
+                 <label>Curated By:</label>
+                 <select id="xcreatedby" name="xcreatedby" required>
+                   </select>
+             </label><br />
+            
+                 <button class="btn btn-danger" onclick="getCurators2()">Get Curators List</button>
+ 
+             <center><label class="custom-field">
+                 <label> Priority:</label>
+                 <input id="xpriority" type="text" pattern="[0-9]+" class="input" minlength="1" maxlength="3" placeholder="only numbers, 0 to 999" required/>
+             </label><br />
+             <center><label class="custom-field">
+                 <label>Status</label>
+                 <select id="xstatus" name="xstatus">
+                     <option value="Active">Active</option>
+                     <option value="InActive">InActive</option>
+                   </select>
+             </label><br />
+             <center><label class="custom-field">
+                 <label>Tags:</label>
+                 <input id="xtags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, comma seperated tags" required/>
+             </label><br />
+         </center><br /><br/>
+         <label id="xsuccess" name="xsuccess" class="input"></label>
+             <center><button type="submit" value="submit" onclick="addXanet();" class="btn btn-primary">Add Xanet</button>
+             </center>
+         </form>
+     </div>
+
+     <!-- Logout -->
     <center><div style="margin:220px">
         <button class="btn btn-danger" onclick="logout()">Logout</button>
     </div></center>
