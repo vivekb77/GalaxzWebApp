@@ -153,6 +153,6 @@ function getCurators1(){
      
  })
  
- document.getElementById('ssuccess').innerHTML = 'Solasys added! ';
+ document.getElementById('ssuccess').innerHTML = 'Solasys added! under Galaxz' +sname;
 
  }
