@@ -32,6 +32,7 @@
     </div></center>
     
     <br>
+    <div style="display: flex; width:1150px; margin:0 auto;">
       <div class="card">
         <div class="card-header">
             <center><h3>Add GALAXZ</h3></center>
@@ -83,7 +84,7 @@
         <div class="card-header">
             <center><h3>Add SOLASYS</h3></center>
         </div>
-        <form name = "solasysform">
+        <form name = "solasysform" id="AddSolasysForm" class="card-body px-5 py-4">
 
             <center><label class="custom-field">
                 <label><b>Search your Galaxzies to add Solasys</label></b></label>
@@ -143,14 +144,14 @@
          <div class="card-header">
              <center><h3>Add Xanets (Articels)</h3></center>
          </div>
-         <form name = "xanetsform">
+         <form name = "xanetsform" id="AddXanetForm" class="card-body px-5 py-4">
  
              <center><label class="custom-field">
                  <label><b>Search your Galaxzies</b> </label>
                  <br>
                  <select id="getgalaxz2" name="getgalaxz2" required>
                    </select>
-             </label><br />
+             </label>
             <button class="btn btn-danger" onclick="getGalaxz2()">Get Galaxz List</button>
             <center><label class="custom-field">
                 <label><b>Search Solasys under selected Galaxz</b></label>
@@ -166,7 +167,7 @@
                  <br>
                  <textarea name="xname" id="xname" rows="4" cols="30" placeholder="70 chars" minlength="5" maxlength="70" required></textarea>
                   </textarea>
-             </label><br />
+             </label>
              <center><label class="custom-field">
                  <label><b>Xanet (Article) description</b></label>
                  <br>
@@ -199,12 +200,13 @@
                  <br>
                  <input id="xtags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, 1 or more tags, comma seperated" required/>
              </label><br />
-         </center><br /><br/>
+         </center><br />
          <label id="xsuccess" name="xsuccess" class="input"></label>
-             <center><button type="submit" value="submit" onclick="addXanet();" class="btn btn-primary">Add Xanet</button>
+             <center><button type="submit" onclick="addXanet();" class="btn btn-primary">Add Xanet</button>
              </center>
          </form>
      </div>
+    </div>
     <center><div style="margin:100px">
         <button class="btn btn-primary" onclick="logout()">Logout</button>
     </div></center>
