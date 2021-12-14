@@ -161,6 +161,7 @@ function getCurators1(){
     })
 }
 
+//solasys form validation
 function SformValidation() {
 
   if( document.solasysform.getgalaxz.value == "" ) {
@@ -334,6 +335,7 @@ function getCurators2(){
     })
 }
 
+//xanet form validation
 function XformValidation() {
 
   if( document.xanetsform.getgalaxz2.value == "" ) {
