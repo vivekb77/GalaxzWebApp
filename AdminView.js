@@ -7,6 +7,38 @@ firebase.auth().onAuthStateChanged((user)=>{
 })
 
 
+function GformValidation() {
+
+  if( document.galaxzform.gname.value.trim() == "") {
+      alert( "Add Galaxz name" );
+      document.galaxzform.gname.focus() ;
+      return false;
+   }
+   if( document.galaxzform.description.value.trim() == "" ) {
+      alert( "Add Galaxz description" );
+      document.galaxzform.description.focus() ;
+      return false;
+   }
+
+   if( document.galaxzform.createdby.value == "" ) {
+      alert( "Select a curator from the list" );
+      document.galaxzform.createdby.focus() ;
+      return false;
+   }
+
+   if( document.galaxzform.status.value == "" ) {
+      alert( "Select status to Inactive" );
+      document.galaxzform.status.focus() ;
+      return false;
+   }
+   if( document.galaxzform.tags.value.trim() == "" ) {
+      alert( "Add tags" );
+      document.galaxzform.tags.focus() ;
+      return false;
+   }
+  addGalaxz()
+  }
+
 function addGalaxz() {
 
 
@@ -21,14 +53,14 @@ function addGalaxz() {
  const autoId = usersRef.push().key
 
  usersRef.child(autoId).set({
-     name: gname.value,
-     description: gdescription.value,
+     name: gname.value.trim(),
+     description: gdescription.value.trim(),
      createdBy: createdby.value,
      createdById:firebase.auth().currentUser.uid,
      galaxzId: autoId,
      priority:1001, //(parseInt(spriority.value)), value more than 1000 means inactive . set this value when activating galaxz
      status:status.value,
-     tags:tags.value,
+     tags:tags.value.trim(),
      numberOfSolasys:  0,
      views: 0,
      followers:0,
@@ -38,7 +70,7 @@ function addGalaxz() {
  })
  
  document.getElementById('success').innerHTML = 'Galaxz added. Add Solasys and Xanets now, admin will make the Galaxz live after verifying the data.';
-
+ alert( "Galaxz added. Add Solasys and Xanets now, admin will make the Galaxz live after verifying the data" );
  }
 
 function logout(){
@@ -129,6 +161,43 @@ function getCurators1(){
     })
 }
 
+function SformValidation() {
+
+  if( document.solasysform.getgalaxz.value == "" ) {
+    alert( "Select a Galaxz from the list to add Solasys" );
+    document.solasysform.getgalaxz.focus() ;
+    return false;
+ }
+  if( document.solasysform.sname.value.trim() == "") {
+      alert( "Add Solasys name" );
+      document.solasysform.sgname.focus() ;
+      return false;
+   }
+   if( document.solasysform.sdescription.value.trim() == "" ) {
+      alert( "Add Solasys description" );
+      document.solasysform.ssescription.focus() ;
+      return false;
+   }
+
+   if( document.solasysform.screatedby.value == "" ) {
+      alert( "Select a curator from the list" );
+      document.solasysform.createdby.focus() ;
+      return false;
+   }
+
+   if( document.solasysform.sstatus.value == "" ) {
+      alert( "Select status" );
+      document.solasysform.sstatus.focus() ;
+      return false;
+   }
+   if( document.solasysform.stags.value.trim() == "" ) {
+      alert( "Add tags" );
+      document.solasysform.stags.focus() ;
+      return false;
+   }
+   addSolasys()
+  }
+
  function addSolasys() {
 
 
@@ -145,15 +214,15 @@ function getCurators1(){
  const autoId = usersRef1.push().key
 
  usersRef1.child(autoId).set({
-     name: sname.value,
-     description: sdescription.value,
+     name: sname.value.trim(),
+     description: sdescription.value.trim(),
      createdBy: screatedby.value,
      createdById:firebase.auth().currentUser.uid,
      galaxzId: galaxzId.value,
      solasysId: autoId,
      priority: 99,//(parseInt(spriority.value)),  // priority should be number
      status:sstatus.value,
-     tags:stags.value,
+     tags:stags.value.trim(),
      numberOfArticles:  0,
      views: 0,
      followers:0,
@@ -174,7 +243,7 @@ function getCurators1(){
 }
 
  document.getElementById('ssuccess').innerHTML = 'Solasys added under Galaxz. Add Xanets now.';
-
+ alert( "Solasys added under Galaxz. Add Xanets now" );
 
  }
 
@@ -265,6 +334,53 @@ function getCurators2(){
     })
 }
 
+function XformValidation() {
+
+  if( document.xanetsform.getgalaxz2.value == "" ) {
+    alert( "Select a Galaxz from the list" );
+    document.xanetsform.getgalaxz2.focus() ;
+    return false;
+ }
+ if( document.xanetsform.getsolasys.value == "" ) {
+  alert( "Select a Solasys from the list to add Xanets" );
+  document.xanetsform.getsolasys.focus() ;
+  return false;
+}
+  if( document.xanetsform.xname.value.trim() == "") {
+      alert( "Add Xanet name" );
+      document.xanetsform.xname.focus() ;
+      return false;
+   }
+   if( document.xanetsform.xdescription.value.trim() == "" ) {
+      alert( "Add Xanet description" );
+      document.xanetsform.xsescription.focus() ;
+      return false;
+   }
+   if( document.xanetsform.xurl.value.trim() == "" ) {
+    alert( "Add Xanet URL with https://" );
+    document.xanetsform.xurl.focus() ;
+    return false;
+ }
+
+   if( document.xanetsform.xcreatedby.value == "" ) {
+      alert( "Select a curator from the list" );
+      document.xanetsform.xcreatedby.focus() ;
+      return false;
+   }
+
+   if( document.xanetsform.xstatus.value == "" ) {
+      alert( "Select status" );
+      document.xanetsform.xstatus.focus() ;
+      return false;
+   }
+   if( document.xanetsform.xtags.value.trim() == "" ) {
+      alert( "Add tags" );
+      document.xanetsform.xtags.focus() ;
+      return false;
+   }
+   addXanet()
+  }
+
 //add Xanet
 function addXanet() {
 
@@ -284,16 +400,16 @@ function addXanet() {
 
  usersRef1.child(autoId).set({
      articleId:autoId,
-     name: xname.value,
-     description: xdescription.value,
-     url: xurl.value,
+     name: xname.value.trim(),
+     description: xdescription.value.trim(),
+     url: xurl.value.trim(),
      curatedBy: xcreatedby.value,
      createdById:firebase.auth().currentUser.uid,
      galaxzId: xgalaxzId.value,
      solasysId: xsolasysId.value,
      priority: 99, //(parseInt(xpriority.value)),  // priority should be number
      status:xstatus.value,
-     tags:xtags.value,
+     tags:xtags.value.trim(),
      views: 0,
      likes:0,
      reads:0,
@@ -312,7 +428,7 @@ function addXanet() {
     numberOfArticles:firebase.database.ServerValue.increment(1)
   });
  }
-
+ alert( "Xanet (Article) added" );
  document.getElementById('xsuccess').innerHTML = 'Xanet (Article) added.';
 
 }

@@ -37,11 +37,12 @@
         <div class="card-header">
             <center><h3>Add GALAXZ</h3></center>
         </div>
-        <form name = "galaxzform" id="AddGalaxzForm" class="card-body px-5 py-4">
+        <div id="error"></div>
+        <form name = "galaxzform" id="galaxzform" class="card-body px-5 py-4">
             <center><label class="custom-field">
                  <span class="input"><b>Galaxz Name</b></span>
               <br>
-                <textarea name="gname" id="gname" rows="4" cols="30" placeholder="70 chars" minlength="5" maxlength="70" required></textarea>
+                <textarea name="gname" id="gname" rows="4" cols="30" placeholder="70 chars" minlength="4" maxlength="70" required></textarea>
                  </textarea>
             </label><br />
             <center><label class="custom-field">
@@ -63,16 +64,16 @@
                 <br>
                 <select id="status" name="status">
                     <option value="InActive">InActive</option>
-                  </select>
+                  </select> 
             </label><br />
             <center><label class="custom-field">
                 <label><b>Tags</b></label>
                 <br>
-                <input id="tags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, 1 or more tags, comma seperated" required/>
+                <input id="tags" type="text" class="input" minlength="2" maxlength="30" placeholder="30 chars, 1 or more tags, comma seperated" required/>
             </label><br />
         </center><br>
         <label id="success" name="success" class="input"></label>
-            <center><button type="submit" value="submit" onclick="addGalaxz();" class="btn btn-primary">Add Galaxz</button>
+            <center><button type="submit" value="submit" onclick="GformValidation();" class="btn btn-primary">Add Galaxz</button>
             </center>
         </form>
     </div>
@@ -84,7 +85,7 @@
         <div class="card-header">
             <center><h3>Add SOLASYS</h3></center>
         </div>
-        <form name = "solasysform" id="AddSolasysForm" class="card-body px-5 py-4">
+        <form name = "solasysform" id="solasysform" class="card-body px-5 py-4">
 
             <center><label class="custom-field">
                 <label><b>Search your Galaxzies to add Solasys</label></b></label>
@@ -126,12 +127,12 @@
             <center><label class="custom-field">
                 <label><b>Tags</b></label>
             <br>
-                <input id="stags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, 1 or more tags, comma seperated" required/>
+                <input id="stags" name="stags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, 1 or more tags, comma seperated" required/>
             </label><br />
         </center><br />
         <label id="ssuccess" name="ssuccess" class="input"></label>
         <br>
-            <center><button type="submit" value="submit" onclick="addSolasys();" class="btn btn-primary">Add Solasys</button>
+            <center><button type="submit" value="submit" onclick="SformValidation();" class="btn btn-primary">Add Solasys</button>
             </center>
         </form>
     </div>
@@ -144,7 +145,7 @@
          <div class="card-header">
              <center><h3>Add Xanets (Articels)</h3></center>
          </div>
-         <form name = "xanetsform" id="AddXanetForm" class="card-body px-5 py-4">
+         <form name = "xanetsform" id="xanetsform" class="card-body px-5 py-4">
  
              <center><label class="custom-field">
                  <label><b>Search your Galaxzies</b> </label>
@@ -176,7 +177,7 @@
              <center><label class="custom-field">
                 <label><b>URL of the article</b><br>Should be https:// not http://</label>
                 <br>
-                <input id="xurl" type="text" class="input" minlength="6" maxlength="200" placeholder="200 chars, url should start with https://" required/>
+                <input id="xurl" name="xurl" type="text" class="input" minlength="6" maxlength="200" placeholder="200 chars, url should start with https://" required/>
             </label><br />
              <center><label class="custom-field">
                  <label><b>Curated By</label></b></label>
@@ -198,11 +199,11 @@
              <center><label class="custom-field">
                  <label><b>Tags</b></label>
                  <br>
-                 <input id="xtags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, 1 or more tags, comma seperated" required/>
+                 <input id="xtags" name="xtags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, 1 or more tags, comma seperated" required/>
              </label><br />
          </center><br />
          <label id="xsuccess" name="xsuccess" class="input"></label>
-             <center><button type="submit" onclick="addXanet();" class="btn btn-primary">Add Xanet</button>
+             <center><button type="submit" onclick="XformValidation();" class="btn btn-primary">Add Xanet</button>
              </center>
          </form>
      </div>
@@ -226,45 +227,6 @@
       <script src="firebase.js"></script>
     <script src="AdminView.js"></script>
     
-
-<!-- validate the add galaxz form -->
-<script>
-    function formValidation() {
-
-        if( document.galaxzform.gname.value == "" ) {
-            alert( "Add Galaxz name" );
-            document.galaxzform.gname.focus() ;
-            return false;
-         }
-         if( document.galaxzform.description.value == "" ) {
-            alert( "Add Galaxz description" );
-            document.galaxzform.description.focus() ;
-            return false;
-         }
-
-         if( document.galaxzform.createdby.value == "" ) {
-            alert( "Select a curator from the list" );
-            document.galaxzform.createdby.focus() ;
-            return false;
-         }
-
-         if( document.galaxzform.status.value == "" ) {
-            alert( "Select status to Inactive" );
-            document.galaxzform.status.focus() ;
-            return false;
-         }
-         if( document.galaxzform.tags.value == "" ) {
-            alert( "Add tags" );
-            document.galaxzform.tags.focus() ;
-            return false;
-         }
-        
-         return(true)
-      
-        
-    }
-</script>
-
 
 </body>
 </html>
