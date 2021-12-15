@@ -75,7 +75,7 @@ function addGalaxz() {
 
 function logout(){
     firebase.auth().signOut()
-    location.replace("home.html") //  send to home page to login after logout
+    location.replace("index.html") //  send to home page to login after logout
 }
 
 // get the list if curator names for galaxz form
