@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxz Curator</title>
+    <link rel="stylesheet" href="./home.css" />
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css"
+    rel="stylesheet"
+    />
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
+    ></script>
+
+    <style>
+        table.XanetsTable {
+          width: 80%;
+          background-color: #ffffff;
+          border-collapse: collapse;
+          border-width: 1px;
+          border-color: #494949;
+          border-style: solid;
+          color: #000000;
+        }
+        
+        table.XanetsTable td, table.XanetsTable th {
+          border-width: 1px;
+          border-color: #686868;
+          border-style: solid;
+          padding: 2px;
+        }
+        
+        table.XanetsTable thead {
+          background-color: #00d5ff;
+        }
+        </style>
+</head>
+<body>
+    <center><div style="margin:10px">
+        <span id="user" class="message">Hello, < email-id ></Email-id></span>
+        <div class="success"><span>View content</span></div>
+    </div></center>
+     <!-- Update page-->
+     <center><div style="margin:10px">
+        <form method="get" action="AdminView.html">
+            <button class="btn btn-primary" type="submit">GoTo ADD SECTION</button>
+        </form>
+    </div></center>
+
+    <center><div style= "margin:10px;"">
+        <form method="get" action="ViewGalaxz.html">
+            <button class="btn btn-primary" type="submit">VIEW GALAXZ</button>
+        </form>
+        <form method="get" action="ViewSolasys.html">
+            <button class="btn btn-primary" type="submit">VIEW SOLASYS</button>
+        </form>
+
+        <center><label class="custom-field">
+            <label><b>Search your Galaxzies to view Solasys</label></b></label>
+            <br>
+            <select id="getgalaxz" name="getgalaxz" required>
+              </select>
+        </label><br />
+       <button class="btn btn-danger" onclick="getGalaxz()">Get Galaxz List</button>
+
+       <center><label class="custom-field">
+        <label><b>Search your Solasys to view Xanets</label></b></label>
+        <br>
+        <select id="getsolasys" name="getsolasys" required>
+          </select>
+    </label><br />
+   <button class="btn btn-danger" onclick="getSolasys()">Get Solasys List</button>
+
+        <div class="success"><span>View all your Xanets</span></div>
+    </div></center>
+
+    <center><div style="margin:10px">
+        <button class="btn btn-danger" onclick="GetXanets()">Get Xanet List</button>
+    </div></center>
+
+    <!-- table view-->
+    <center><div style="margin:10px">
+    <table class="XanetsTable">
+        <thead>
+          <tr>
+            <th>Article name</th>
+            <th>Description</th>
+            <th>URL</th>
+            <th>Curated By</th>
+            <th>Curated Date</th>
+            <th>Status</th>
+            <th>Views</th>
+            <th>Likes</th>
+            <th>Reads</th>
+            <th>Shares</th>
+            <th>Article Id</th>
+            <th>Solasys Id</th>
+           
+          </tr>
+        </thead>
+        <tbody id="xanetstable">
+         
+        </tbody>
+      </table>
+          </div>
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script> use this for prod , remove below one -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+      <script src="firebase.js"></script>
+    <script src="ViewXanets.js"></script>
+    
+
+</body>
+</html>

@@ -26,7 +26,7 @@
     </div></center>
      <!-- Update page-->
      <center><div style="margin:10px">
-        <form method="get" action="UpdateGalaxz.html">
+        <form method="get" action="ViewGalaxz.html">
             <button class="btn btn-primary" type="submit">GoTo VIEW SECTION</button>
         </form>
     </div></center>
@@ -124,12 +124,12 @@
                     <option value="InActive">InActive</option>
                   </select>
             </label><br />
-            <center><label class="custom-field">
+            <!-- <center><label class="custom-field">
                 <label><b>Tags</b></label>
             <br>
                 <input id="stags" name="stags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, 1 or more tags, comma seperated" required/>
             </label><br />
-        </center><br />
+        </center><br /> -->
         <label id="ssuccess" name="ssuccess" class="input"></label>
         <br>
             <center><button type="submit" value="submit" onclick="SformValidation();" class="btn btn-primary">Add Solasys</button>
@@ -153,6 +153,7 @@
                  <select id="getgalaxz2" name="getgalaxz2" required>
                    </select>
              </label>
+             <br>
             <button class="btn btn-danger" onclick="getGalaxz2()">Get Galaxz List</button>
             <center><label class="custom-field">
                 <label><b>Search Solasys under selected Galaxz</b></label>
@@ -196,11 +197,11 @@
                      <option value="InActive">InActive</option>
                    </select>
              </label><br />
-             <center><label class="custom-field">
+             <!-- <center><label class="custom-field">
                  <label><b>Tags</b></label>
                  <br>
                  <input id="xtags" name="xtags" type="text" class="input" minlength="3" maxlength="30" placeholder="30 chars, 1 or more tags, comma seperated" required/>
-             </label><br />
+             </label><br /> -->
          </center><br />
          <label id="xsuccess" name="xsuccess" class="input"></label>
              <center><button type="submit" onclick="XformValidation();" class="btn btn-primary">Add Xanet</button>

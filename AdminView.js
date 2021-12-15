@@ -191,11 +191,6 @@ function SformValidation() {
       document.solasysform.sstatus.focus() ;
       return false;
    }
-   if( document.solasysform.stags.value.trim() == "" ) {
-      alert( "Add tags" );
-      document.solasysform.stags.focus() ;
-      return false;
-   }
    addSolasys()
   }
 
@@ -206,7 +201,6 @@ function SformValidation() {
     const sdescription = document.getElementById('sdescription');
     const screatedby = document.getElementById('screatedby');
     const sstatus = document.getElementById('sstatus');
-    const stags = document.getElementById('stags');
     const galaxzId = document.getElementById('getgalaxz');
    //const galaxzName = document.getElementById('getgalaxz');
 
@@ -223,7 +217,6 @@ function SformValidation() {
      solasysId: autoId,
      priority: 99,//(parseInt(spriority.value)),  // priority should be number
      status:sstatus.value,
-     tags:stags.value.trim(),
      numberOfArticles:  0,
      views: 0,
      followers:0,
@@ -375,11 +368,7 @@ function XformValidation() {
       document.xanetsform.xstatus.focus() ;
       return false;
    }
-   if( document.xanetsform.xtags.value.trim() == "" ) {
-      alert( "Add tags" );
-      document.xanetsform.xtags.focus() ;
-      return false;
-   }
+ 
    addXanet()
   }
 
@@ -392,7 +381,6 @@ function addXanet() {
     const xurl = document.getElementById('xurl');
     const xcreatedby = document.getElementById('xcreatedby');
     const xstatus = document.getElementById('xstatus');
-    const xtags = document.getElementById('xtags');
     const xgalaxzId = document.getElementById('getgalaxz2');
     const xsolasysId = document.getElementById('getsolasys');
 
@@ -411,7 +399,6 @@ function addXanet() {
      solasysId: xsolasysId.value,
      priority: 99, //(parseInt(xpriority.value)),  // priority should be number
      status:xstatus.value,
-     tags:xtags.value.trim(),
      views: 0,
      likes:0,
      reads:0,
