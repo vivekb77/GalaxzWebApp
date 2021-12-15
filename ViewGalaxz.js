@@ -9,7 +9,13 @@ firebase.auth().onAuthStateChanged((user)=>{
 
 //get all the galaxzies created by the user
 function GetGalaxz(){
-  
+   
+    //clear the table
+    var table = document.getElementById("galaxztable");
+    for(var i = table.rows.length - 0; i > 0; i--)
+    {
+        table.deleteRow(i);
+    }
 
     const database = firebase.database();
 

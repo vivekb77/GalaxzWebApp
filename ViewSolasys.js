@@ -37,6 +37,7 @@ function getGalaxz(){
 
 //get all the galaxzies created by the user
 function GetSolasys(){
+
   
     const galaxzId = document.getElementById('getgalaxz');
 
