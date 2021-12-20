@@ -351,12 +351,13 @@ function XformValidation() {
       document.xanetsform.xsescription.focus() ;
       return false;
    }
-   if( document.xanetsform.xurl.value.trim() == "" ) {
+   if(!document.xanetsform.xurl.value.trim().startsWith('https://')) {
     alert( "Add Xanet URL with https://" );
     document.xanetsform.xurl.focus() ;
     return false;
  }
 
+  
    if( document.xanetsform.xcreatedby.value == "" ) {
       alert( "Select a curator from the list" );
       document.xanetsform.xcreatedby.focus() ;
