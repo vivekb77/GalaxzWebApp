@@ -351,11 +351,15 @@ function XformValidation() {
       document.xanetsform.xsescription.focus() ;
       return false;
    }
+
+   // validate url ony if Article is selected
+   if(document.xanetsform.xArticleorList.value == "Article"){
    if(!document.xanetsform.xurl.value.trim().startsWith('https://')) {
     alert( "Add Xanet URL with https://" );
     document.xanetsform.xurl.focus() ;
     return false;
  }
+   }
 
   
    if( document.xanetsform.xcreatedby.value == "" ) {

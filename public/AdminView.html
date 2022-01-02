@@ -167,19 +167,29 @@
              <center><label class="custom-field">
                  <label><b>Xanet (Article) Title</b></label>
                  <br>
-                 <textarea name="xname" id="xname" rows="4" cols="30" placeholder="70 chars" minlength="4" maxlength="70" required></textarea>
+                 <textarea name="xname" id="xname" rows="4" cols="30" placeholder="150 chars" minlength="4" maxlength="150" required></textarea>
                   </textarea>
              </label>
              <center><label class="custom-field">
                  <label><b>Xanet (Article) description</b></label>
                  <br>
-                 <textarea name="xdescription" id="xdescription" rows="5" cols="30" placeholder="130 chars" minlength="5" maxlength="130" required></textarea>
+                 <textarea name="xdescription" id="xdescription" rows="5" cols="30" placeholder="300 chars" minlength="5" maxlength="300" required></textarea>
              </label><br />
              <center><label class="custom-field">
-                <label><b>URL of the article</b><br>Should be https:// not http://</label>
+                <label><b>Article or List or Q&A ??</b></label>
                 <br>
-                <input id="xurl" name="xurl" type="text" class="input" minlength="6" maxlength="200" placeholder="200 chars, url should start with https://" required/>
-            </label><br />
+                <select id="xArticleorList" name="xArticleorList">
+                    <option value="Article">Article</option>
+                    <option value="List">List or Q&A</option>
+                  </select>
+            </label><br /><br />
+            <center><label class="custom-field">
+                <label><b>URL of the article , optional for List or Q&A</b><br>Should be https:// not http://</label> </center>
+                <br>
+            <input id="xurl" name="xurl" type="text" class="input" minlength="6" maxlength="200" placeholder="200 chars, url should start with https://"/>
+        </label></center><br />
+           
+                
              <center><label class="custom-field">
                  <label><b>Curated By</label></b></label>
                  <br>
