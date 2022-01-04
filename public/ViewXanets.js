@@ -82,7 +82,7 @@ function GetXanets(){
                 var curatedBy = CurrentRecord.val().curatedBy;
                 var curatedDate = CurrentRecord.val().curatedDate;
                 var description = CurrentRecord.val().description;
-                var reads = CurrentRecord.val().reads;
+                //var reads = CurrentRecord.val().reads;
                 var name = CurrentRecord.val().name;
                 var shares = CurrentRecord.val().shares;
                 var solasysId = CurrentRecord.val().solasysId;
@@ -95,7 +95,7 @@ function GetXanets(){
                  
                  var date = new Date(curatedDate).toDateString();
 
-                AddXanetDataToTable(articleId,name,description,url,curatedBy,date,status,views,reads,likes,shares,articleId,solasysId)
+                AddXanetDataToTable(articleId,name,description,url,curatedBy,date,status,views,likes,shares,articleId,solasysId)
             }
         );
             
@@ -103,8 +103,7 @@ function GetXanets(){
 }
 
 // add galaxzies to table view
-function AddXanetDataToTable(articleId,name,description,url,curatedBy,date,status,views,
-    reads,likes,shares,articleId,solasysId)
+function AddXanetDataToTable(articleId,name,description,url,curatedBy,date,status,views,likes,shares,articleId,solasysId)
 {
     var tablebody = document.getElementById('xanetstable');
     var tablerow = document.createElement('tr');
@@ -116,7 +115,7 @@ function AddXanetDataToTable(articleId,name,description,url,curatedBy,date,statu
     var tabledata6 = document.createElement('td');
     var tabledata7 = document.createElement('td');
     var tabledata8 = document.createElement('td');
-    var tabledata9 = document.createElement('td');
+  //  var tabledata9 = document.createElement('td');
     var tabledata10 = document.createElement('td');
     var tabledata11 = document.createElement('td');
     var tabledata12 = document.createElement('td');
@@ -131,7 +130,7 @@ function AddXanetDataToTable(articleId,name,description,url,curatedBy,date,statu
     tabledata6.innerHTML = status;
     tabledata7.innerHTML = views;
     tabledata8.innerHTML = likes;
-    tabledata9.innerHTML = reads;
+   // tabledata9.innerHTML = reads;
     tabledata10.innerHTML = shares;
     tabledata11.innerHTML = articleId;
     tabledata12.innerHTML = solasysId;
@@ -145,7 +144,7 @@ function AddXanetDataToTable(articleId,name,description,url,curatedBy,date,statu
     tablerow.appendChild(tabledata6);
     tablerow.appendChild(tabledata7); 
     tablerow.appendChild(tabledata8);
-    tablerow.appendChild(tabledata9); 
+   // tablerow.appendChild(tabledata9); 
     tablerow.appendChild(tabledata10);
     tablerow.appendChild(tabledata11); 
     tablerow.appendChild(tabledata12); 
